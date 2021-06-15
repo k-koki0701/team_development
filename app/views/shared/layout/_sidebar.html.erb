@@ -33,8 +33,13 @@
             <a href="#" class="nav-link">
               <i class="fa fa-circle-o nav-icon"></i>
               <p>
-                <%= agenda.title %>
-                <i class="right fa fa-angle-left"></i>
+                <table>
+                  <tr>
+                    <%= agenda.title %>
+                    <%= link_to '削除', agenda, method: :delete, data: { confirm: '削除しますか?' }, class:"btn btn-info" %>
+                    <i class="right fa fa-angle-left"></i>
+                  </tr>
+                </table>
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: block;">
