@@ -51,6 +51,7 @@ class TeamsController < ApplicationController
     if current_user.owner?(@working_team)
       @working_team.owner_id = params[:id]
       @working_team.save
+      SwipeOwnerMailer.swipe_owner_mail(@working_team.owner).deliver
       redirect_to team_path(@working_team)
     end
   end
